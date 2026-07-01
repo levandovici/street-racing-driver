@@ -23,7 +23,6 @@ namespace ALIyerEdon
 
 		// Display total scores
 		public Text TotalScores;
-		public Dropdown difficultyLevel;
 
 		[Header("Levels Info ____________________________________________________" +
 			"____________________________________________________")]
@@ -57,8 +56,6 @@ namespace ALIyerEdon
 
 			// Update total scores display
 			TotalScores.text = PlayerPrefs.GetInt("TotalScores").ToString();
-
-			difficultyLevel.value = PlayerPrefs.GetInt("Difficulty Level");
 
 			for (int l = 0; l < levelPriceText.Length; l++)
 			{
@@ -165,11 +162,6 @@ namespace ALIyerEdon
 
 			SceneManager.LoadSceneAsync(levelNames[7]);
 
-		}
-
-		public void Set_Difficulty()
-		{
-			PlayerPrefs.SetInt("Difficulty Level", difficultyLevel.value);
 		}
 	}
 }

@@ -62,9 +62,6 @@ namespace ALIyerEdon
                 // Default driver name
                 PlayerPrefs.SetString("DriverName", "Player");
 
-                // Default difficulty level => 0 = simulation , 1 = Arcade
-                PlayerPrefs.SetInt("Difficulty Level", 0);
-
 				// Set default control type to the arrow keys
 				//Arrow keys = 0 , Joystick = 1 , acceleration = 2
 				PlayerPrefs.SetInt("ControlType", 0);

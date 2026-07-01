@@ -142,8 +142,6 @@ namespace ALIyerEdon
 		// Random flame effect for gear up and down mode
 		int rnd;
 
-		int difficultyLevel;
-
 		SmoothFollow smoothFollow_1;
 		SmoothFollow2 smoothFollow_2;
 
@@ -159,8 +157,6 @@ namespace ALIyerEdon
 			mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 			originalFOV = mainCamera.fieldOfView;
 			enginePowerTemp = enginePower;
-
-            difficultyLevel = PlayerPrefs.GetInt("Difficulty Level");
 
 			if (FindAnyObjectByType<SmoothFollow>())
 				smoothFollow_1 = FindAnyObjectByType<SmoothFollow>();
@@ -608,15 +604,7 @@ namespace ALIyerEdon
 				{
 					if (isPlayer)
 					{
-						if (difficultyLevel == 0) // Simulation (slip on the ground tag, out of the road tag)
-						{
-							if (inRoad)
-								handBrakeFrictionCurve.stiffness = defaultStiffness_Sideways;
-							else
-								handBrakeFrictionCurve.stiffness = handBrakeFriction;
-						}
-						if (difficultyLevel == 1) // Arcade (normal driving)
-							handBrakeFrictionCurve.stiffness = defaultStiffness_Sideways;
+						handBrakeFrictionCurve.stiffness = defaultStiffness_Sideways;
 					}
 					else
 						handBrakeFrictionCurve.stiffness = defaultStiffness_Sideways;
