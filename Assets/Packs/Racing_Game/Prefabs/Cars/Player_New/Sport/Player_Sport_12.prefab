@@ -42,7 +42,7 @@ WheelCollider:
   m_GameObject: {fileID: 78959606783901795}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.54
+  m_Radius: 0.48
   m_SuspensionSpring:
     spring: 60000
     damper: 4000
@@ -14938,7 +14938,7 @@ WheelCollider:
   m_GameObject: {fileID: 1074219654682218335}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.54
+  m_Radius: 0.48
   m_SuspensionSpring:
     spring: 60000
     damper: 4000
@@ -30372,7 +30372,7 @@ WheelCollider:
   m_GameObject: {fileID: 2681294386248752913}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.54
+  m_Radius: 0.48
   m_SuspensionSpring:
     spring: 60000
     damper: 4000
@@ -60822,7 +60822,7 @@ WheelCollider:
   m_GameObject: {fileID: 5809362392924242820}
   serializedVersion: 2
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.54
+  m_Radius: 0.48
   m_SuspensionSpring:
     spring: 60000
     damper: 4000
@@ -87084,8 +87084,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.1826172, y: 0.85692877, z: 4.2286377}
-  m_Center: {x: -0.001953125, y: 0.08577213, z: -0.18389893}
+  m_Size: {x: 1.9265424, y: 2.0898438, z: 4.354047}
+  m_Center: {x: 0.018826485, y: 0.60071427, z: 0.059884787}
 --- !u!114 &1864754881076966046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87113,7 +87113,6 @@ MonoBehaviour:
   - {fileID: 1196279332205954847}
   - {fileID: 3185398249228480927}
   - {fileID: 7208808345607486277}
-  steeringWheel: {fileID: 5778247657646432499}
   centerOfMass: {fileID: 1587562875238106954}
   skidmarkWidth: 0.275
   currentSpeed: 0

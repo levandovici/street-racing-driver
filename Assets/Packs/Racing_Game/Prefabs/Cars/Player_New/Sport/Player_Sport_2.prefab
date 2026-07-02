@@ -95,8 +95,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.9902344, y: 0.6880915, z: 4.8118896}
-  m_Center: {x: 0.0041503906, y: 0.0013535023, z: -0.47955322}
+  m_Size: {x: 2.0855217, y: 1.5265881, z: 3.9515605}
+  m_Center: {x: 0, y: 0.28329402, z: 0.04111457}
 --- !u!114 &5831282480626896009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,7 +124,6 @@ MonoBehaviour:
   - {fileID: 4627680485945586080}
   - {fileID: 2196462320810115518}
   - {fileID: 6513175514434875229}
-  steeringWheel: {fileID: 7312932657513330494}
   centerOfMass: {fileID: 7250613907504531735}
   skidmarkWidth: 0.275
   currentSpeed: 0

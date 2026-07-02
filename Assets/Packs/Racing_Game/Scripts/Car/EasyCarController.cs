@@ -964,6 +964,8 @@ namespace ALIyerEdon
 				FixWheelCollider(Wheel_Transforms[i], Wheel_Colliders[i]);
             }
 
+			FixCollider();
+
 #if UNITY_EDITOR
             EditorUtility.SetDirty(gameObject);
 
@@ -997,6 +999,44 @@ namespace ALIyerEdon
             float offset = collider.suspensionDistance * (1f - collider.suspensionSpring.targetPosition);
 
             collider.transform.position += wheel.up * offset;
+        }
+
+        private void FixCollider()
+        {
+            BoxCollider box = GetComponent<BoxCollider>();
+
+            if (box == null)
+                return;
+
+            // Calculate bounds from all renderers.
+            Renderer[] renderers = GetComponentsInChildren<MeshRenderer>();
+
+            if (renderers.Length == 0)
+                return;
+
+            Bounds bounds = renderers[0].bounds;
+
+			for (int i = 1; i < renderers.Length; i++)
+			{
+				bounds.Encapsulate(renderers[i].bounds);
+			}
+
+            Transform t = transform;
+
+            Vector3 localCenter = t.InverseTransformPoint(bounds.center);
+
+            Vector3 localSize = bounds.size;
+
+            localSize.x /= t.lossyScale.x;
+            localSize.y /= t.lossyScale.y;
+            localSize.z /= t.lossyScale.z;
+
+            localSize.x -= 0.4f;
+            localSize.y -= 0.4f;
+            localSize.z -= 0.4f;
+
+            box.center = localCenter;
+            box.size = localSize;
         }
     }
 }
