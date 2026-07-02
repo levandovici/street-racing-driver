@@ -38,9 +38,6 @@ namespace ALIyerEdon
 
             target = GameObject.FindGameObjectWithTag("Player").transform;
 
-            if (target)
-                steeringWheel = target.GetComponent<EasyCarController>().steeringWheel.gameObject;
-
             if(steeringWheel)
                 steeringWheel.SetActive(false);
 

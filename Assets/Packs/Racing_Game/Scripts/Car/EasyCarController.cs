@@ -45,9 +45,6 @@ namespace ALIyerEdon
 
 		public Transform[] Wheel_Transforms;
 
-		// Interior view steering wheel game object
-		public Transform steeringWheel;
-
 		// public Transform centerOfMass;
 		public Transform centerOfMass;
 
@@ -352,11 +349,6 @@ namespace ALIyerEdon
 				Wheel_Transforms[i].transform.position = position;
 				Wheel_Transforms[i].transform.rotation = quat;
 			}
-
-			// Rotate the steering wheel game object (interior steering wheel)
-			if (steeringWheel)
-				steeringWheel.rotation =
-					Quaternion.Lerp(steeringWheel.rotation, transform.rotation * Quaternion.Euler(34f, 0, (Wheel_Colliders[0].steerAngle) * -1.5f),Time.deltaTime * 3f);
 			#endregion
 
 		}
