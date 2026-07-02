@@ -8,6 +8,10 @@ using UnityEngine;
 using System.Collections;
 using ALIyerEdon;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 namespace ALIyerEdon
 {
 	#region EnumFields
@@ -955,9 +959,52 @@ namespace ALIyerEdon
 
         }
         #endregion
+
+
+
+        [ContextMenu("Wheel Straightening")]
+        private void WheelStraightening()
+        {
+			for(int i = 0; i < Wheel_Transforms.Length; i++)
+			{
+				FixWheel(Wheel_Transforms[i]);
+
+				FixWheelCollider(Wheel_Transforms[i], Wheel_Colliders[i]);
+            }
+
+#if UNITY_EDITOR
+            EditorUtility.SetDirty(gameObject);
+
+            GameObject prefabRoot = PrefabUtility.GetOutermostPrefabInstanceRoot(gameObject);
+            if (prefabRoot != null)
+            {
+                PrefabUtility.ApplyPrefabInstance(prefabRoot, InteractionMode.AutomatedAction);
+            }
+
+            AssetDatabase.SaveAssets();
+#endif
+        }
+
+        private void FixWheel(Transform wheel)
+        {
+            Transform obj = wheel.GetChild(0);
+
+            Vector3 worldPos = obj.position;
+
+            obj.localPosition = Vector3.zero;
+
+            wheel.position += worldPos - obj.position;
+        }
+
+        private void FixWheelCollider(Transform wheel, WheelCollider collider)
+        {
+			collider.radius = 0.48f;
+
+            collider.transform.position = wheel.position;
+
+            float offset = collider.suspensionDistance * (1f - collider.suspensionSpring.targetPosition);
+
+            collider.transform.position += wheel.up * offset;
+        }
     }
-
-
-
-
 }
