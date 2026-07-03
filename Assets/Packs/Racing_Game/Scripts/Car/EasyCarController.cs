@@ -7,6 +7,8 @@
 using UnityEngine;
 using System.Collections;
 using ALIyerEdon;
+using System.Linq;
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -135,6 +137,13 @@ namespace ALIyerEdon
 		SmoothFollow2 smoothFollow_2;
 
 		#endregion
+
+
+
+		[SerializeField]
+		private GameObject _carReference;
+
+
 
 		void Start()
 		{
@@ -843,6 +852,92 @@ namespace ALIyerEdon
             }
 
 			FixCollider();
+
+			SavePrefab();
+        }
+
+		[ContextMenu("Fix Effects")]
+		private void FixEffects()
+		{
+			if (vehicleAudio == null)
+				vehicleAudio = GetComponent<EasyCarAudio>();
+
+			for(int i = 0; i < vehicleAudio.wheelSmokes.Length; i++)
+			{
+				vehicleAudio.wheelSmokes[i].transform.position = Wheel_Colliders[i].transform.position - Vector3.up * Wheel_Colliders[i].radius;
+			}
+
+			GameObject trail1 = null;
+
+			GameObject trail2 = null;
+
+
+			Nitro_Feature nf = GetComponent<Nitro_Feature>();
+
+
+			if (nf != null)
+			{
+				for (int i = 0; i < nf.nitroParticles.Length; i++)
+				{
+					if (nf.nitroParticles[i].name.ToLower() == "trail")
+					{
+						if (trail1 == null)
+						{
+							trail1 = nf.nitroParticles[i];
+						}
+						else if (trail2 == null)
+						{
+							trail2 = nf.nitroParticles[i];
+						}
+					}
+				}
+
+				trail1.transform.position = Wheel_Colliders[Wheel_Colliders.Length - 2].transform.position - Vector3.up * Wheel_Colliders[Wheel_Colliders.Length - 2].radius;
+
+				trail2.transform.position = Wheel_Colliders[Wheel_Colliders.Length - 1].transform.position - Vector3.up * Wheel_Colliders[Wheel_Colliders.Length - 1].radius;
+			}
+			else
+			{
+				Racer_Nitro rn = GetComponent<Racer_Nitro>();
+
+                for (int i = 0; i < rn.nitroParticles.Length; i++)
+                {
+                    if (rn.nitroParticles[i].name.ToLower() == "trail")
+                    {
+                        if (trail1 == null)
+                        {
+                            trail1 = rn.nitroParticles[i];
+                        }
+                        else if (trail2 == null)
+                        {
+                            trail2 = rn.nitroParticles[i];
+                        }
+                    }
+                }
+
+                trail1.transform.position = Wheel_Colliders[Wheel_Colliders.Length - 2].transform.position - Vector3.up * Wheel_Colliders[Wheel_Colliders.Length - 2].radius;
+
+                trail2.transform.position = Wheel_Colliders[Wheel_Colliders.Length - 1].transform.position - Vector3.up * Wheel_Colliders[Wheel_Colliders.Length - 1].radius;
+            }
+
+            SavePrefab();
+		}
+
+		[ContextMenu("Copy Effects")]
+		private void CopyEffects()
+		{
+			string[] objects = new string[4] { "Flame_1", "Flame_2", "Nitro_1", "Nitro_2"};
+
+			for (int i = 0; i < objects.Length; i++)
+			{
+				Transform reference = _carReference.GetComponentsInChildren<Transform>(true).FirstOrDefault(t => t.name == objects[i]);
+
+				Transform target = gameObject.GetComponentsInChildren<Transform>(true).FirstOrDefault(t => t.name == objects[i]);
+
+				target.localPosition = reference.localPosition;
+
+				target.localRotation = reference.localRotation;
+			}
 
 			SavePrefab();
         }
