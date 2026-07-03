@@ -66,7 +66,6 @@ namespace ALIyerEdon
         public void Resume()
         {
             watchAD.SetActive(true);
-            FindAnyObjectByType<Car_Health>().Refill_Health();
 
             FindAnyObjectByType<Pause_Menu>().canPause = true;
             AudioListener.volume = 1f;

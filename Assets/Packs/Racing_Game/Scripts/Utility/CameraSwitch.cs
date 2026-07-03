@@ -66,20 +66,10 @@ namespace ALIyerEdon
             if (cameraView[currentCamera].DashboardCamera)
             {
                 smoothFollow.SwitchTarget(true);
-                if(GetComponent<EasyCarController>().interior)
-                    GetComponent<EasyCarController>().interior.SetActive(true);
-                if(GetComponent<EasyCarController>().carMesh)
-                    GetComponent<EasyCarController>().carMesh.SetActive(false);
             }
             else
             {
                 smoothFollow.SwitchTarget(false);
-
-                if (GetComponent<EasyCarController>().interior)
-                    GetComponent<EasyCarController>().interior.SetActive(false);
-               
-                if (GetComponent<EasyCarController>().carMesh)
-                    GetComponent<EasyCarController>().carMesh.SetActive(true);
             }
         }
 

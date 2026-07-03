@@ -34,11 +34,7 @@ namespace ALIyerEdon
 		#region Variables
 
 		[Space(3)]
-		public bool OffroadMode = false;
         public DriveType driveWheels = DriveType.Rear;
-		public GameObject body;
-		public GameObject carMesh;
-		public GameObject interior;
 
 		[Header("Wheels")]
 		public WheelCollider[] Wheel_Colliders;
@@ -100,12 +96,7 @@ namespace ALIyerEdon
 
 		EasyCarAudio vehicleAudio;
 
-		[Header("Lights")]
-		// Vehicle lights
-		public Light[] brakeLights;
-		public GameObject[] brakeFlares;
-		public Light[] reverseLights;
-        public GameObject[] reverseFlares;
+        [Header("Lights")]
         public Material brakeMaterial;
 		public float minHDR = 2f, maxHDR = 4f;
 
@@ -128,11 +119,8 @@ namespace ALIyerEdon
 		bool dynamicCamera;
 
 		[Header("Body Shaking")]
-		public float collisionShakeIntensity = 1f;
-		public float bodyShakeIntensity = 5f;
 		public float startDuration = 1.7f;
 		public bool exhaustFlame = true;
-		[HideInInspector] public bool shaking;
 
 		[HideInInspector] public bool isPlayer = false;
 
@@ -150,9 +138,6 @@ namespace ALIyerEdon
 
 		void Start()
 		{
-			if(body)
-				bodyStartRotation = body.transform.localRotation;
-
 			BrakeMaterial(minHDR);
 
 			mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -265,21 +250,6 @@ namespace ALIyerEdon
 
 		void Update()
 		{
-			// Body shaking in cutoff
-			if (isPlayer)
-			{
-				if (shaking)
-				{
-					float angle;
-					if (Clutch)
-						angle = Mathf.Sin(Time.time * 30) * (bodyShakeIntensity / 10); 
-					else
-						angle = Mathf.Sin(Time.time * 30) * (bodyShakeIntensity / 17);
-
-					body.transform.localRotation = Quaternion.AngleAxis(angle, Vector3.forward);
-				}
-			}
-
 			#region Camera
 			if (isPlayer)
 			{
@@ -386,40 +356,6 @@ namespace ALIyerEdon
 					}
 				}
 			}
-			if (OffroadMode)
-			{
-				if (currentSpeed > 2.13f)
-				{
-					var emi = vehicleAudio.offroadSmoke.GetComponent<ParticleSystem>().emission;
-					emi.enabled = true;
-				}
-				else
-				{
-					var emi = vehicleAudio.offroadSmoke.GetComponent<ParticleSystem>().emission;
-					emi.enabled = false;
-				}
-			}
-			else
-			{
-                if (inRoad)
-                {
-                    var emi = vehicleAudio.offroadSmoke.GetComponent<ParticleSystem>().emission;
-                    emi.enabled = false;
-                }
-                else
-                {
-                    if (currentSpeed > 2.13f)
-                    {
-                        var emi = vehicleAudio.offroadSmoke.GetComponent<ParticleSystem>().emission;
-                        emi.enabled = true;
-                    }
-                    else
-                    {
-                        var emi = vehicleAudio.offroadSmoke.GetComponent<ParticleSystem>().emission;
-                        emi.enabled = false;
-                    }
-                }
-            }
         }
 
 		public void VehicleEngine()
@@ -436,19 +372,6 @@ namespace ALIyerEdon
 					rigid.linearDamping = 0.3f;
 				else
 					rigid.linearDamping = 0.05f;
-                #endregion
-
-                #region Offroad
-                // Camera shaking control on the out of the road (ground tag)
-                if (isPlayer)
-				{
-					vehicleAudio.shakeUtility.currentSpeed = currentSpeed;
-
-					if (inRoad)
-						vehicleAudio.shakeUtility.offRoadShaking = false;
-					else
-						vehicleAudio.shakeUtility.offRoadShaking = true;
-				}
                 #endregion
 
                 if (currentSpeed <= 7f)
@@ -620,9 +543,7 @@ namespace ALIyerEdon
 						Wheel_Colliders[1].brakeTorque = brakePower * Mathf.Abs(throttleInput);
 						Wheel_Colliders[2].brakeTorque = brakePower * Mathf.Abs(throttleInput / 2);
 						Wheel_Colliders[3].brakeTorque = brakePower * Mathf.Abs(throttleInput / 2);
-						BrakeLights(1f);
 						BrakeMaterial(maxHDR);
-						ReverseLights(0);
 					}
 
 					// Brake in backward moving
@@ -637,9 +558,7 @@ namespace ALIyerEdon
 						Wheel_Colliders[1].brakeTorque = brakePower * Mathf.Abs(throttleInput);
 						Wheel_Colliders[2].brakeTorque = brakePower * Mathf.Abs(throttleInput / 2);
 						Wheel_Colliders[3].brakeTorque = brakePower * Mathf.Abs(throttleInput / 2);
-						BrakeLights(1f);
 						BrakeMaterial(maxHDR);
-						ReverseLights(0);
 					}
 					// Release brake
 					else
@@ -654,18 +573,14 @@ namespace ALIyerEdon
 						Wheel_Colliders[0].forwardFriction = brakeFrictionCurve;
 						Wheel_Colliders[1].forwardFriction = brakeFrictionCurve;
 
-						BrakeLights(0);
 						BrakeMaterial(minHDR);
-						ReverseLights(0);
 					}
 				}
 
 				if (reversing && throttleInput < 0)
 				{
 
-					BrakeLights(0);
 					BrakeMaterial(minHDR);
-					ReverseLights(1f);
 				}
 				#endregion
 
@@ -690,39 +605,6 @@ namespace ALIyerEdon
         }
 
 		#region Lights
-		// Update lights intensity value
-		void BrakeLights(float value)
-		{
-			for (int a = 0; a < brakeLights.Length; a++)
-				brakeLights[a].intensity = value;
-
-			if (value > 0)
-			{
-				for (int a = 0; a < brakeFlares.Length; a++)
-					brakeFlares[a].SetActive(true);
-			}
-			else
-			{
-                for (int a = 0; a < brakeFlares.Length; a++)
-                    brakeFlares[a].SetActive(false);
-            }
-        }
-		void ReverseLights(float value)
-		{
-			for (int a = 0; a < reverseLights.Length; a++)
-				reverseLights[a].intensity = value;
-
-            if (value > 0)
-            {
-                for (int a = 0; a < reverseFlares.Length; a++)
-                    reverseFlares[a].SetActive(true);
-            }
-            else
-            {
-                for (int a = 0; a < reverseFlares.Length; a++)
-                    reverseFlares[a].SetActive(false);
-            }
-        }
 		void BrakeMaterial(float value)
 		{
 			if (brakeMaterial)
@@ -930,8 +812,6 @@ namespace ALIyerEdon
                     {
                         Revs = Mathf.Lerp(0.6f, 1f, Mathf.PingPong(Time.time / 0.07f, 1));
 
-                        shaking = true;
-
                         vehicleAudio.stopRandom = false;
 
                         if (exhaustFlame)
@@ -940,8 +820,6 @@ namespace ALIyerEdon
                     else
                     {
                         Revs = Mathf.Lerp(Revs, Mathf.Abs(throttleInput), Time.deltaTime * 10);
-
-                        shaking = false;
 
                         vehicleAudio.stopRandom = true;
                     }
@@ -966,10 +844,16 @@ namespace ALIyerEdon
 
 			FixCollider();
 
+			SavePrefab();
+        }
+
+		private void SavePrefab()
+		{
 #if UNITY_EDITOR
             EditorUtility.SetDirty(gameObject);
 
             GameObject prefabRoot = PrefabUtility.GetOutermostPrefabInstanceRoot(gameObject);
+
             if (prefabRoot != null)
             {
                 PrefabUtility.ApplyPrefabInstance(prefabRoot, InteractionMode.AutomatedAction);

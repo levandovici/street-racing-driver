@@ -24,28 +24,11 @@ namespace ALIyerEdon
 					carAudio.collisionSource.gameObject.transform.position =
 					collision.GetContact(0).point;
 
-					if (carAudio.collisionSpark && collision.relativeVelocity.magnitude > carAudio.collisionVelocity + 3)
-					{
-						carAudio.collisionSpark.transform.position =
-							collision.GetContact(0).point;
-
-						var emi = carAudio.collisionSpark.GetComponent<ParticleSystem>().emission;
-						emi.enabled = true;
-					}
-
 					if (!carAudio.collisionSource.isPlaying)
 					{
 						carAudio.collisionSource.PlayOneShot(carAudio.collisionClip);
 					}
 				}
-			}
-		}
-		void OnCollisionExit(Collision collision)
-		{
-			if (carAudio.collisionSpark)
-			{
-				var emi = carAudio.collisionSpark.GetComponent<ParticleSystem>().emission;
-				emi.enabled = false;
 			}
 		}
 	}

@@ -62,14 +62,11 @@ namespace ALIyerEdon
 		public float startSkidDuration = 2.3f;
 		[Header("Effects")]
 		[Space(5)]
-		public GameObject offroadSmoke;
 		public GameObject[] wheelSmokes;
 		public GameObject[] exhaustFlame;
-		public GameObject collisionSpark;
 
 		EasyCarController m_vehicleController;
 		[HideInInspector] public bool raceIsStarted;
-		[HideInInspector] public Shake_Utility shakeUtility;
 		[HideInInspector] public float engineStartVolume;
         [HideInInspector] public bool releaseThrottle;
 
@@ -80,8 +77,6 @@ namespace ALIyerEdon
 
 			m_vehicleController = GetComponent<EasyCarController>();
 			
-			shakeUtility = FindAnyObjectByType<Shake_Utility>();
-
 			checkWheel = new bool[m_vehicleController.Wheel_Colliders.Length];
 
 			engineStartVolume = engineVolume;
@@ -171,23 +166,10 @@ namespace ALIyerEdon
 
 		public void Stop_Effects()
 		{
-
-			var emiOff = offroadSmoke.GetComponent<ParticleSystem>().emission;
-            emiOff.enabled = false;
-
 			for (int a = 0; a < wheelSmokes.Length; a++)
 			{
 				var emi = wheelSmokes[a].GetComponent<ParticleSystem>().emission;
 				emi.enabled = false;
-			}
-
-			if (collisionSpark)
-			{
-				var emi = collisionSpark.GetComponent<ParticleSystem>().emission;
-				emi.enabled = false;
-
-				if (collisionSpark.GetComponentInChildren<Light>())
-					collisionSpark.GetComponentInChildren<Light>().intensity = 0;
 			}
 		}
 		public void Play_StartSkid_Sound()
@@ -302,69 +284,13 @@ namespace ALIyerEdon
 		{
 			if (collision.relativeVelocity.magnitude > collisionVelocity)
 			{
-				if (m_vehicleController.isPlayer)
-				{
-					if (shakeUtility)
-					{
-						shakeUtility.collisionShaking = true;
-						shakeUtility.shakeIntensity = (m_vehicleController.currentSpeed / 5)
-							 * m_vehicleController.collisionShakeIntensity;
-					}
-				}
-
 				collisionSource.gameObject.transform.position =
 				collision.GetContact(0).point;
-
-				if (collisionSpark && collision.relativeVelocity.magnitude > collisionVelocity + 3)
-				{
-					collisionSpark.transform.position =
-						collision.GetContact(0).point;
-
-					var emi = collisionSpark.GetComponent<ParticleSystem>().emission;
-					emi.enabled = true;
-
-					if (collisionSpark.GetComponentInChildren<Light>())
-						collisionSpark.GetComponentInChildren<Light>().intensity = 1f;
-				}
 
 				if (!collisionSource.isPlaying)
 				{
 					collisionSource.PlayOneShot(collisionClip);
 				}
-			}
-		}
-		void OnCollisionExit(Collision collision)
-		{
-			if (collisionSpark)
-			{
-				if (m_vehicleController.isPlayer)
-				{
-					if (shakeUtility)
-						shakeUtility.collisionShaking = false;
-                }
-
-                var emi = collisionSpark.GetComponent<ParticleSystem>().emission;
-				emi.enabled = false;
-
-				if (collisionSpark.GetComponentInChildren<Light>())
-					collisionSpark.GetComponentInChildren<Light>().intensity = 0;
-			}
-		}
-		void OnCollisionStay(Collision collision)
-        {
-			if (collisionSpark && collision.relativeVelocity.magnitude < collisionVelocity + 3)
-            {
-				if (m_vehicleController.isPlayer)
-				{
-					if (shakeUtility)
-						shakeUtility.collisionShaking = false;
-                }
-
-                var emi = collisionSpark.GetComponent<ParticleSystem>().emission;
-				emi.enabled = false;
-
-				if (collisionSpark.GetComponentInChildren<Light>())
-					collisionSpark.GetComponentInChildren<Light>().intensity = 0;
 			}
 		}
 	}

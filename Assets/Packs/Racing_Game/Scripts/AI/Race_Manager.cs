@@ -362,8 +362,6 @@ namespace ALIyerEdon
                 GameObject.FindGameObjectWithTag("Player")
                 .GetComponent<EasyCarController>().startDuration);
 
-            GameObject.FindGameObjectWithTag("Player")
-                .GetComponent<EasyCarController>().shaking = false;
             yield return new WaitForSeconds(1f);
 
             // Racers can check reverse mode after 2 seconds from the race start 

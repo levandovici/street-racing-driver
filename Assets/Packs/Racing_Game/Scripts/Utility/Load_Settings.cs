@@ -86,10 +86,6 @@ namespace ALIyerEdon
                     var main = ps.main;
                     main.startColor = fogColor; 
                 }
-
-                var ps2 = carAudio[a].offroadSmoke.GetComponent<ParticleSystem>();
-                var main2 = ps2.main;
-                main2.startColor = fogColor;
             }
             #endregion
 

@@ -32,8 +32,6 @@ namespace ALIyerEdon
 
                 GetComponent<Car_Position>().enabled = false;
 
-                GetComponent<Car_Health>().enabled = false;
-
                 GetComponent<Car_AI>().enabled = false;
                 
                 GetComponent<EasyCarAudio>().Stop_Effects();
