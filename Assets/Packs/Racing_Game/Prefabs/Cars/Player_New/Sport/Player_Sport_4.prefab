@@ -26814,6 +26814,7 @@ MonoBehaviour:
   exhaustFlame: 1
   isPlayer: 0
   inRoad: 1
+  _carReference: {fileID: 0}
 --- !u!114 &6359892319678190092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52433,7 +52434,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6675201789480326853}
-  - component: {fileID: 8313600031269529473}
   m_Layer: 3
   m_Name: Body
   m_TagString: Untagged
@@ -52459,19 +52459,6 @@ Transform:
   - {fileID: 3959301816767271692}
   m_Father: {fileID: 1181961947906315425}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8313600031269529473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8279160581551184181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f9ce96bd24d9ac4e87067d7d1dbd330, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  carID: 1
 --- !u!1 &8436818961225474192
 GameObject:
   m_ObjectHideFlags: 0
