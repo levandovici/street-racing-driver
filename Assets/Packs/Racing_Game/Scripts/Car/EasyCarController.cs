@@ -136,13 +136,13 @@ namespace ALIyerEdon
 		SmoothFollow smoothFollow_1;
 		SmoothFollow2 smoothFollow_2;
 
-		#endregion
+        #endregion
 
 
-
-		[SerializeField]
+#if UNITY_EDITOR
+        [SerializeField]
 		private GameObject _carReference;
-
+#endif
 
 
 		void Start()
@@ -840,7 +840,7 @@ namespace ALIyerEdon
         #endregion
 
 
-
+#if UNITY_EDITOR
         [ContextMenu("Wheel Straightening")]
         private void WheelStraightening()
         {
@@ -1017,5 +1017,6 @@ namespace ALIyerEdon
             box.center = localCenter;
             box.size = localSize;
         }
+#endif
     }
 }
