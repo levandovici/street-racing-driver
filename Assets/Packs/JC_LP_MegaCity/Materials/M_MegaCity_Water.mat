@@ -83,7 +83,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Depth: 0.26
+    - Depth: -2000
     - FlareDensity: 6000
     - FlarePower: 8.9
     - FlareSpeed: 2
@@ -158,6 +158,7 @@ Material:
     - _Wave_Intensity: 0.2
     - _Wave_Scale: 100
     - _Wave_Speed: 500
+    - _XRMotionVectorsPass: 1
     - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 4
     - _ZTestTransparent: 4

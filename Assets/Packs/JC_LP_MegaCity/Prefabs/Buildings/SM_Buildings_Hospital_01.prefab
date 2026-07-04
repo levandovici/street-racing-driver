@@ -350,6 +350,9 @@ GameObject:
   - component: {fileID: 5169689563300870546}
   - component: {fileID: 4342349416746777826}
   - component: {fileID: 1213122106849184827}
+  - component: {fileID: 3061611660129317171}
+  - component: {fileID: 6635986689564271363}
+  - component: {fileID: 7056499693913744429}
   m_Layer: 0
   m_Name: SM_Buildings_Hospital_01
   m_TagString: Untagged
@@ -459,8 +462,71 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 24.394966, y: 16.051413, z: 19.434128}
-  m_Center: {x: -4.277483, y: 7.974292, z: -0.2170639}
+  m_Size: {x: 7.991699, y: 16.21025, z: 3.7886438}
+  m_Center: {x: -12.479116, y: 8.053711, z: -1.7796979}
+--- !u!65 &3061611660129317171
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4299695751281353088}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.029625, y: 16.21025, z: 3.992607}
+  m_Center: {x: 0.0065670013, y: 8.053711, z: 7.0187626}
+--- !u!65 &6635986689564271363
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4299695751281353088}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 15.331737, y: 16.21025, z: 13.416046}
+  m_Center: {x: -0.8299813, y: 8.053711, z: -1.6561117}
+--- !u!65 &7056499693913744429
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4299695751281353088}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.210368, y: 16.21025, z: 2.1102333}
+  m_Center: {x: -11.588451, y: 8.053711, z: -4.7607956}
 --- !u!1 &4469114407286255102
 GameObject:
   m_ObjectHideFlags: 0

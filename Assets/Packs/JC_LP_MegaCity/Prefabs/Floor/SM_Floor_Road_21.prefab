@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7631843457294361992}
   - component: {fileID: 5980703301248375676}
   - component: {fileID: 481320220277640264}
-  - component: {fileID: 8439765526426765258}
+  - component: {fileID: 4038834271690045199}
   m_Layer: 0
   m_Name: SM_Floor_Road_21
   m_TagString: Untagged
@@ -92,8 +92,8 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8439765526426765258
-BoxCollider:
+--- !u!64 &4038834271690045199
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -110,6 +110,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 10.700001, y: 5.0003095, z: 10}
-  m_Center: {x: 0, y: -3.4998457, z: -5}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1991146765126048262, guid: bdc2f9c031a722c47b515a60f1eaaa45, type: 3}

@@ -462,6 +462,8 @@ GameObject:
   - component: {fileID: 2011299639101621554}
   - component: {fileID: 7461156111966351492}
   - component: {fileID: 1611557381136451081}
+  - component: {fileID: 8239864622818699298}
+  - component: {fileID: 5847159521834673422}
   m_Layer: 0
   m_Name: SM_Buildings_Police_01
   m_TagString: Untagged
@@ -566,5 +568,47 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 32.090385, y: 24.418392, z: 20.080029}
-  m_Center: {x: 0, y: 12.20661, z: 0.94852066}
+  m_Size: {x: 10.025833, y: 18.026781, z: 12.343229}
+  m_Center: {x: -11.032276, y: 9.010804, z: 0.06346798}
+--- !u!65 &8239864622818699298
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7980986870317356415}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 12.010204, y: 24.418392, z: 18.07177}
+  m_Center: {x: 0.031466484, y: 12.20661, z: 0.051353455}
+--- !u!65 &5847159521834673422
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7980986870317356415}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10.066002, y: 18.0613, z: 12.343229}
+  m_Center: {x: 11.039635, y: 9.028064, z: 0.06346798}
