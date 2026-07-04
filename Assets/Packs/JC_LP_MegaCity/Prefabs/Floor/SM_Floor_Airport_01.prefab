@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9020256571684436224}
   - component: {fileID: 1778163239407982560}
   - component: {fileID: 265201955794054282}
-  - component: {fileID: 7131491301753094949}
+  - component: {fileID: 4431449838441615756}
   m_Layer: 0
   m_Name: SM_Floor_Airport_01
   m_TagString: Untagged
@@ -59,6 +59,11 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
@@ -80,12 +85,14 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7131491301753094949
-MeshCollider:
+--- !u!65 &4431449838441615756
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,7 +109,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1615596673025857970, guid: e9a12f67884c55947931f5b3c53fcf66, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 120, y: 0.0750055, z: 210.1056}
+  m_Center: {x: -50, y: 0.037498213, z: -94.9472}

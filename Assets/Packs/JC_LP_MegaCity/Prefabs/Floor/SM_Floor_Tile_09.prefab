@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6291407142956399650}
   - component: {fileID: 62425649748086162}
   - component: {fileID: 2158471096216495606}
-  - component: {fileID: 5576571106707277507}
+  - component: {fileID: 3007987496663218261}
   m_Layer: 0
   m_Name: SM_Floor_Tile_09
   m_TagString: Untagged
@@ -59,6 +59,11 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
@@ -80,12 +85,14 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5576571106707277507
-MeshCollider:
+--- !u!65 &3007987496663218261
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,7 +109,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7965486160278335228, guid: 7db1a8986b310464c93dcec4d2edd2fb, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 20.001, y: 0.0000008754432, z: 20.001}
+  m_Center: {x: 0, y: 0.049999565, z: -10.0005}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3750949832068200566}
   - component: {fileID: 2876943377172578304}
   - component: {fileID: 568954810864235040}
-  - component: {fileID: 1352564639472868551}
+  - component: {fileID: 6737016882768135289}
   m_Layer: 0
   m_Name: SM_Vehicles_Plane_01
   m_TagString: Untagged
@@ -59,6 +59,11 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
@@ -80,12 +85,14 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1352564639472868551
-MeshCollider:
+--- !u!65 &6737016882768135289
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,7 +109,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 5921211948971286680, guid: c2f6a21f292543a45862ba08b39e67d0, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 32.903717, y: 11.879622, z: 31.388935}
+  m_Center: {x: 0, y: 5.875686, z: -0.77194357}

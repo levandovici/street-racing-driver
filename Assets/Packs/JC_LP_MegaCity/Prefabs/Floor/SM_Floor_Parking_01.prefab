@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5532013926237552978}
   - component: {fileID: 7943223122416991527}
   - component: {fileID: 2754949424437896099}
-  - component: {fileID: 592587278147756696}
+  - component: {fileID: 210841590195373218}
   m_Layer: 0
   m_Name: SM_Floor_Parking_01
   m_TagString: Untagged
@@ -59,6 +59,11 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
@@ -80,12 +85,14 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &592587278147756696
-MeshCollider:
+--- !u!65 &210841590195373218
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,7 +109,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5983849478665921483, guid: eb71dbb40026ccf42b57cf9c77267005, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 25, y: 0.07500071, z: 10.10561}
+  m_Center: {x: 0, y: 0.037499648, z: -4.947195}

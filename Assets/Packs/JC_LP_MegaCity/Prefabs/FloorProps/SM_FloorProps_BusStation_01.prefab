@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3871381197874642278}
   - component: {fileID: 4341125018508298826}
   - component: {fileID: 5132160901013505577}
-  - component: {fileID: 2398855209140244899}
+  - component: {fileID: 4346552014886116961}
   m_Layer: 0
   m_Name: SM_FloorProps_BusStation_01
   m_TagString: Untagged
@@ -59,6 +59,11 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
@@ -81,12 +86,14 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2398855209140244899
-MeshCollider:
+--- !u!65 &4346552014886116961
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -103,7 +110,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1724062433431591217, guid: 64cf222bc4ed67046bd59067a1cefd13, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 3.5786982, y: 2.7381616, z: 1.5324885}
+  m_Center: {x: 0.0006803274, y: 1.3690808, z: 0.76628834}

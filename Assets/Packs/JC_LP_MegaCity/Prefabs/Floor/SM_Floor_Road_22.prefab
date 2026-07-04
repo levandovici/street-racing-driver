@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7216863269493356076}
   - component: {fileID: 5050734122857021951}
   - component: {fileID: 6969835956521437362}
-  - component: {fileID: 1379318197042290869}
+  - component: {fileID: 7723671578074666267}
   m_Layer: 0
   m_Name: SM_Floor_Road_22
   m_TagString: Untagged
@@ -59,6 +59,11 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
@@ -80,12 +85,14 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1379318197042290869
-MeshCollider:
+--- !u!65 &7723671578074666267
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,7 +109,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3206713643013522244, guid: 6fccc92a937e0254baf8505ce73b126c, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 15, y: 0.600001, z: 10}
+  m_Center: {x: 0.00000023841858, y: 0.29999912, z: -5}
