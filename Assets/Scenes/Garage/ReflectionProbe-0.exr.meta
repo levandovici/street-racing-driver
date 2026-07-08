@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 52fece45231286040bcf0e31edbdd68f
+guid: 747d053da2dde8e48a1d433a45e7c151
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,10 +128,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 358482
-  packageName: Complete Racing Game 2 (Mega Game)
-  packageVersion: 1.2
-  assetPath: Assets/Packs/Racing_Game/Scene/Garage/ReflectionProbe-1.exr
-  uploadId: 926594
