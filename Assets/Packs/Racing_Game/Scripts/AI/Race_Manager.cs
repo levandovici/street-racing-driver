@@ -28,8 +28,6 @@ namespace ALIyerEdon
         public string trackName = "Level 1";
         public bool startCutscene = false;
 
-        [HideInInspector] public bool showLocalPosition = false;
-
         [Header("Race Start ____________________________________________________" +
             "____________________________________________________")]
         [Space(5)]
@@ -152,9 +150,6 @@ namespace ALIyerEdon
             {
                 GameObject racer = Instantiate(totalRacerPrefabs[i], spawnPositions[i].position,
                      spawnPositions[i].rotation) as GameObject;
-
-                // Show or hide car position on the top of the car
-                racer.GetComponent<Car_Position>().displayPosition = false;
 
                 racer.GetComponent<Car_AI>().raceStarted = false;
 
@@ -328,134 +323,97 @@ namespace ALIyerEdon
 
             // Racers can check reverse mode after 2 seconds from the race start 
             foreach (Car_AI carAI in FindObjectsByType<Car_AI>())
-                 carAI.canReverseCheck = true;
+                carAI.canReverseCheck = true;
 
-         }
-         public void Finish_Race()
-         {
-             GameObject.FindGameObjectWithTag("Player").GetComponent<Car_AI>().enabled = true;
-             FindAnyObjectByType<InputSystem>().canControl = false;
+        }
+        public void Finish_Race()
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Car_AI>().enabled = true;
+            FindAnyObjectByType<InputSystem>().canControl = false;
 
-             raceFinishUI.SetActive(true);
+            raceFinishUI.SetActive(true);
 
-             FindAnyObjectByType<Start_Finish_UI>().finishRaceMenu.SetActive(true);
-             FindAnyObjectByType<Start_Finish_UI>().startButton.SetActive(false);
-             FindAnyObjectByType<Start_Finish_UI>().raceUI.SetActive(false);
+            FindAnyObjectByType<Start_Finish_UI>().finishRaceMenu.SetActive(true);
+            FindAnyObjectByType<Start_Finish_UI>().startButton.SetActive(false);
+            FindAnyObjectByType<Start_Finish_UI>().raceUI.SetActive(false);
 
-             mobileControls.SetActive(false);
-             Update_Positions_Display();
+            mobileControls.SetActive(false);
+            Update_Positions_Display();
 
-             // Update award icons (gold , bronze silver) at race finish menu
-             if (sortedPositions[0].Name == playerName)
-                 FindAnyObjectByType<Start_Finish_UI>().Update_Award(0, levelID);
-             else if (sortedPositions[1].Name == playerName)
-                 FindAnyObjectByType<Start_Finish_UI>().Update_Award(1, levelID);
-             else if (sortedPositions[2].Name == playerName)
-                 FindAnyObjectByType<Start_Finish_UI>().Update_Award(2, levelID);
-             else
-                 FindAnyObjectByType<Start_Finish_UI>().Update_Award(3, levelID);
+            // Update award icons (gold , bronze silver) at race finish menu
+            if (sortedPositions[0].Name == playerName)
+                FindAnyObjectByType<Start_Finish_UI>().Update_Award(0, levelID);
+            else if (sortedPositions[1].Name == playerName)
+                FindAnyObjectByType<Start_Finish_UI>().Update_Award(1, levelID);
+            else if (sortedPositions[2].Name == playerName)
+                FindAnyObjectByType<Start_Finish_UI>().Update_Award(2, levelID);
+            else
+                FindAnyObjectByType<Start_Finish_UI>().Update_Award(3, levelID);
 
-             startUI.GetComponent<Start_Finish_UI>().totalScores.text =
-                 "Total Coins : " +
-                 PlayerPrefs.GetInt("TotalScores").ToString();
+            startUI.GetComponent<Start_Finish_UI>().totalScores.text =
+                "Total Coins : " +
+                PlayerPrefs.GetInt("TotalScores").ToString();
 
-         }
-
-        void Update()
-         {
-
-
-
-             // Update ui info (player position + current lap   )
-             if (playerInfo)
-                 playerInfo.text = "Pos : " + (playerPosition.currentPosition + 1).ToString()
-                 + " / " + carPositions.Length.ToString();
-             else
-                 Debug.Log("Please add -Position Info- text object in the -Race Manager- component");
-
-             if (playerPosition.currentLap > 0)
-             {
-                 if (lapInfo)
-                     lapInfo.text = "Lap : " + playerPosition.currentLap.ToString()
-                      + " / " + totalLaps.ToString();
-                 else
-                     Debug.Log("Please add -Lap Info- text object in the -Race Manager- component");
-             }
-             else
-             {
-                 if (lapInfo)
-                     lapInfo.text = "Lap : 1" + " / " + totalLaps.ToString();
-                 else
-                     Debug.Log("Please add -Lap Info- text object in the -Race Manager- component");
-             }
-             //_________________________________
-
-             // Positions info
-             for (int pos = 0; pos < racerInfo.Length; pos++)
-             {
-                 try
-                 {
-                     if (racerInfo[pos])
-                         racerInfo[pos].text = "   " + (pos + 1).ToString() + "   |   " + sortedPositions[pos].Name.ToString();
-                 }
-                 catch { }
-             }
-         }
-
-         // List and sort car positions based on the istance form the checkpoints
-         public void Update_Position(int racerID, string totalPoints)
-         {
-             // List and sort racer positions based on the distance from the checkpoint
-             positions[racerID].Position = float.Parse(totalPoints);
-             sortedPositions = positions.OrderBy(number => number.Position).ToList();
-
-             sortedPositions.Reverse();
-             //_________________________________
-
-             for (int b = 0; b < sortedPositions.Count; b++)
-             {
-                 if (playerPosition.RacerName == sortedPositions[b].Name)
-                 {
-                     playerPosition.currentPosition = b;
-                 }
-             }
-
-             // Enable current position icon (on the top of the car) for each racer
-             for (int a = 0; a < carPositions.Length; a++)
-             {
-                 for (int c = 0; c < carPositions.Length; c++)
-                 {
-                     if (carPositions[a].RacerName == sortedPositions[c].Name)
-                     {
-                         carPositions[a].Update_Position(c);
-                     }
-                 }/*
-                 if (carPositions[a].RacerName == sortedPositions[0].Name)
-             {
-                 carPositions[a].Update_Position(0);
-              }
-
-             if (carPositions[a].RacerName == sortedPositions[1].Name)
-             { 
-                 carPositions[a].Update_Position(1);
-              }
-             if (carPositions[a].RacerName == sortedPositions[2].Name)
-             { 
-                 carPositions[a].Update_Position(2);
-             }
-             if (carPositions[a].RacerName == sortedPositions[3].Name)
-             {
-                 carPositions[a].Update_Position(3);
-             }
-             if (carPositions[a].RacerName == sortedPositions[4].Name)
-             {
-                 carPositions[a].Update_Position(4);
-             }*/
         }
 
-        //_________________________________
+        void Update()
+        {
 
-    }
 
+
+            // Update ui info (player position + current lap   )
+            if (playerInfo)
+                playerInfo.text = "Pos : " + (playerPosition.currentPosition + 1).ToString()
+                + " / " + carPositions.Length.ToString();
+            else
+                Debug.Log("Please add -Position Info- text object in the -Race Manager- component");
+
+            if (playerPosition.currentLap > 0)
+            {
+                if (lapInfo)
+                    lapInfo.text = "Lap : " + playerPosition.currentLap.ToString()
+                     + " / " + totalLaps.ToString();
+                else
+                    Debug.Log("Please add -Lap Info- text object in the -Race Manager- component");
+            }
+            else
+            {
+                if (lapInfo)
+                    lapInfo.text = "Lap : 1" + " / " + totalLaps.ToString();
+                else
+                    Debug.Log("Please add -Lap Info- text object in the -Race Manager- component");
+            }
+            //_________________________________
+
+            // Positions info
+            for (int pos = 0; pos < racerInfo.Length; pos++)
+            {
+                try
+                {
+                    if (racerInfo[pos])
+                        racerInfo[pos].text = "   " + (pos + 1).ToString() + "   |   " + sortedPositions[pos].Name.ToString();
+                }
+                catch { }
+            }
+        }
+
+        // List and sort car positions based on the istance form the checkpoints
+        public void Update_Position(int racerID, string totalPoints)
+        {
+            // List and sort racer positions based on the distance from the checkpoint
+            positions[racerID].Position = float.Parse(totalPoints);
+            sortedPositions = positions.OrderBy(number => number.Position).ToList();
+
+            sortedPositions.Reverse();
+            //_________________________________
+
+            for (int b = 0; b < sortedPositions.Count; b++)
+            {
+                if (playerPosition.RacerName == sortedPositions[b].Name)
+                {
+                    playerPosition.currentPosition = b;
+                }
+            }
+        }
     }
 }

@@ -34,9 +34,6 @@ namespace ALIyerEdon
         [HideInInspector] public Transform nextCheckpoint;
         Race_Manager race_Manager;
 
-        // Race position images
-        [HideInInspector] public bool displayPosition = false;
-
         [Space(5)]
         public GameObject[] localPositions;
 
@@ -48,7 +45,6 @@ namespace ALIyerEdon
         {
 
             race_Manager = GameObject.FindAnyObjectByType<Race_Manager>();
-            Update_Position(currentPosition);
             StartCoroutine(Check_Distance());
 
         }
@@ -70,16 +66,6 @@ namespace ALIyerEdon
                 totalPoints = currentLap.ToString("00") + currentCheckpoint.ToString("000") + (100000 - nextCheckpointDistance).ToString();
                 race_Manager.Update_Position(RacerID, totalPoints);
             }
-        }
-
-        public void Update_Position(int position)
-        {
-            for (int a = 0; a < localPositions.Length; a++)
-            {
-                localPositions[a].SetActive(false);
-            }
-
-            localPositions[position].SetActive(displayPosition);
         }
 
         public void CanPass_Lap()

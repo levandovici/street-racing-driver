@@ -54,14 +54,6 @@ namespace ALIyerEdon
             for (int d = 0; d < counters.Length; d++)
                 counters[d].SetActive(false);
 
-            // Enable local position display on top of the cars
-            foreach (Car_Position carPos in FindObjectsByType<Car_Position>())
-            {
-                // Show or hide car position on the top of the car
-                carPos.GetComponent<Car_Position>().displayPosition =
-                    FindAnyObjectByType<Race_Manager>().showLocalPosition;
-            }
-
             yield return new WaitForSeconds(FindAnyObjectByType<EasyCarAudio>().startSkidDuration);
 
             foreach (EasyCarAudio carAudio in FindObjectsByType<EasyCarAudio>())
