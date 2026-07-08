@@ -120,15 +120,7 @@ namespace ALIyerEdon
 
             totalRacerPrefabs = new GameObject[racerPrefabs.Length + 1];
 
-            // First racer is the player's prefab
-            if (PlayerPrefs.GetInt("GameMode") == 0) // Sport
-                totalRacerPrefabs[0] = playerPrefabs[PlayerPrefs.GetInt("CarID_Sport")];
-            if (PlayerPrefs.GetInt("GameMode") == 1) // Truck
-                totalRacerPrefabs[0] = playerPrefabs[PlayerPrefs.GetInt("CarID_Truck")];
-            if (PlayerPrefs.GetInt("GameMode") == 2) // F1
-                totalRacerPrefabs[0] = playerPrefabs[PlayerPrefs.GetInt("CarID_F1")];
-            if (PlayerPrefs.GetInt("GameMode") == 3) // Offroad
-                totalRacerPrefabs[0] = playerPrefabs[PlayerPrefs.GetInt("CarID_Offroad")];
+            totalRacerPrefabs[0] = playerPrefabs[PlayerPrefs.GetInt("CarID_Sport")];
 
             // Add racer prefabs to the total racer array
             for (int ttt = 1; ttt < totalRacerPrefabs.Length; ttt++)

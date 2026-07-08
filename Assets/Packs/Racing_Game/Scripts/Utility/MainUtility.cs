@@ -244,12 +244,6 @@ namespace ALIyerEdon
             if(GarageCameraState == 3)
                 mainCamera.transform.position = offroadCamera.position;
         }
-
-		public void GameMode_Select(int id)
-		{
-            PlayerPrefs.SetInt("GameMode",id);
-        }
-        
         public void Enter_DriverName()
         {
             PlayerPrefs.SetString("DriverName", driverName.text);

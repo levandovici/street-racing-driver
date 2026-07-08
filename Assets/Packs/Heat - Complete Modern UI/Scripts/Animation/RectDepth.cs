@@ -8,8 +8,10 @@ namespace Michsky.UI.Heat
     public class RectDepth : MonoBehaviour
     {
         [Header("Settings")]
+#if !UNITY_IOS && !UNITY_ANDROID
         [SerializeField][Range(0.05f, 1)] private float smoothness = 0.25f;
         [SerializeField][Range(0.5f, 10)] private float multiplier = 2;
+#endif
         [SerializeField][Range(1, 2)] private float maxRectScale = 1;
 
         [Header("Resources")]
