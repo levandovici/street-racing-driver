@@ -78,14 +78,20 @@ namespace ithappy
 
         #region Unity Lifecycle
 
-        private void Update()
+
+
+        private void Start()
         {
             UpdateComponentSettings();
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             UpdateScaleValues();
+        }
+
+        private void FixedUpdate()
+        {
             UpdateGroundDetection();
             UpdateMovement();
         }
