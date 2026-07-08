@@ -164,7 +164,7 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 0
     m_Colors:
-    - DeepColor: {r: 0.18013522, g: 0.4924714, b: 0.8301887, a: 1}
+    - DeepColor: {r: 0.18013519, g: 0.34117648, b: 0.8301887, a: 1}
     - FlareColor: {r: 0.41568625, g: 0.41568625, b: 0.41568625, a: 1}
     - FoamColor: {r: 1, g: 1, b: 1, a: 0.8509804}
     - ShallowColor: {r: 0.14150932, g: 0.9341806, b: 1, a: 0.56078434}
