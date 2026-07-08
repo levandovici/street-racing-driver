@@ -86,7 +86,7 @@ Material:
     - Depth: -2000
     - FlareDensity: 6000
     - FlarePower: 8.9
-    - FlareSpeed: 2
+    - FlareSpeed: 1
     - FoamAmount: 0.38
     - FoamPosition: 1.5
     - FoamScale: 859
