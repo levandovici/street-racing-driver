@@ -6457,8 +6457,6 @@ MonoBehaviour:
   timeScale: 1.5
   totalLaps: 2
   startCounter: {fileID: 0}
-  playerArrow: {fileID: 6354385715302650357, guid: 8467834ddc443a745bc462e45d832733, type: 3}
-  racerArrow: {fileID: 6675623359956714147, guid: 68a27abfa40fe5745a39c21707e20189, type: 3}
   yOffset: 10
   scale: 50
   startUI: {fileID: 3982713448506193732}
@@ -17263,7 +17261,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7491167731184838593}
   - component: {fileID: 8436031728264657507}
-  - component: {fileID: 7337658477969256662}
   - component: {fileID: 1984377999666975902}
   m_Layer: 0
   m_Name: Minimap_Camera
@@ -17338,26 +17335,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &7337658477969256662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5693986470704368635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e94967f91f64be749a1923cdfef4f73b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  smooth: 0.33
-  distance: 287.34
-  height: 117.76
-  Angle: 38.16
-  lineOfSightMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &1984377999666975902
 MonoBehaviour:
   m_ObjectHideFlags: 0

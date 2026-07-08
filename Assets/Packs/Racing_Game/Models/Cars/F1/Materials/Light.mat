@@ -13,6 +13,7 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _EMISSION
+  - _ENVIRONMENTREFLECTIONS_OFF
   m_InvalidKeywords:
   - _GLOSSYREFLECTIONS_OFF
   m_LightmapFlags: 2
@@ -121,7 +122,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 0.8006458, g: 0.058749013, b: 0, a: 1}
-    - _Color: {r: 0.8006458, g: 0.058749035, b: 0, a: 1}
+    - _Color: {r: 0.8006458, g: 0.05874899, b: 0, a: 1}
     - _EmissionColor: {r: 4, g: 0, b: 0, a: 4}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

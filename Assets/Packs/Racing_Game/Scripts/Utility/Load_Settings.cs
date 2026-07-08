@@ -44,25 +44,6 @@ namespace ALIyerEdon
             Set_QualityLevel(PlayerPrefs.GetInt("QualityLevel"));
             #endregion
 
-            #region MotionBlur
-            UnityEngine.Rendering.PostProcessing.MotionBlur mBlur;
-
-            GameObject.FindAnyObjectByType<
-                    UnityEngine.Rendering.PostProcessing.PostProcessVolume>()
-                    .profile.TryGetSettings(out mBlur);
-
-            if (PlayerPrefs.GetInt("MotionBlur") == 1)
-            {
-                mBlur.enabled.overrideState = true;
-                mBlur.enabled.value = true;
-            }
-            else
-            {
-                mBlur.enabled.overrideState = true;
-                mBlur.enabled.value = false;
-            }
-            #endregion
-
             yield return new WaitForEndOfFrame();
 
             #region Fog Smoke
@@ -89,79 +70,6 @@ namespace ALIyerEdon
             }
             #endregion
 
-        }
-
-        public void Set_Reflection(bool ssr_1, bool ssr_2)
-        {
-            Trive.Rendering.StochasticReflections ssr2;
-
-            ScreenSpaceReflections ssr1;
-
-            FindAnyObjectByType<PostProcessVolume>().profile.TryGetSettings(out ssr2);
-
-            FindAnyObjectByType<PostProcessVolume>().profile.TryGetSettings(out ssr1);
-
-            if (ssr_1)
-            {
-                foreach (Camera cam in FindObjectsByType<Camera>())
-                    cam.renderingPath = RenderingPath.DeferredShading;
-
-                if (GameObject.FindGameObjectWithTag("MinimapCamera"))
-                    GameObject.FindGameObjectWithTag("MinimapCamera").GetComponent<Camera>().renderingPath = RenderingPath.Forward;
-
-                if (cinematicCameras.Length != 0)
-                {
-                    foreach (Camera cam2 in cinematicCameras)
-                    {
-                        if (cam2 != null)
-                            cam2.renderingPath = RenderingPath.DeferredShading;
-                    }
-                }
-                ssr2.enabled.value = false;
-                ssr1.enabled.value = true;
-            }
-            if (ssr_2)
-            {
-                foreach (Camera cam in FindObjectsByType<Camera>())
-                    cam.renderingPath = RenderingPath.DeferredShading;
-
-                if (GameObject.FindGameObjectWithTag("MinimapCamera"))
-                    GameObject.FindGameObjectWithTag("MinimapCamera").GetComponent<Camera>().renderingPath = RenderingPath.Forward;
-
-                if (cinematicCameras.Length != 0)
-                {
-                    foreach (Camera cam2 in cinematicCameras)
-                    {
-                        if (cam2 != null)
-                            cam2.renderingPath = RenderingPath.DeferredShading;
-                    }
-                }
-                ssr2.enabled.value = true;
-
-                ssr2.resolveDownsample.value = false;
-                ssr2.raycastDownsample.value = false;
-
-                ssr1.enabled.value = false;
-            }
-            if (!ssr_1 && !ssr_2)
-            {
-                foreach (Camera cam in FindObjectsByType<Camera>())
-                    cam.renderingPath = RenderingPath.Forward;
-
-                if (GameObject.FindGameObjectWithTag("MinimapCamera"))
-                    GameObject.FindGameObjectWithTag("MinimapCamera").GetComponent<Camera>().renderingPath = RenderingPath.Forward;
-
-                if (cinematicCameras.Length != 0)
-                {
-                    foreach (Camera cam2 in cinematicCameras)
-                    {
-                        if (cam2 != null)
-                            cam2.renderingPath = RenderingPath.Forward;
-                    }
-                }
-                ssr2.enabled.value = false;
-                ssr1.enabled.value = false;
-            }
         }
 
         public void Update_MusicVolume(float volume)
@@ -204,7 +112,6 @@ namespace ALIyerEdon
                 {
                     gf.enabled = false;
                 }
-                Set_Reflection(false, false);
                 if (FindAnyObjectByType<Terrain>())
                 {
                     FindAnyObjectByType<Terrain>().detailObjectDensity = 0;
@@ -236,18 +143,10 @@ namespace ALIyerEdon
                         }
                     }
                 }
-                foreach (Light light in FindObjectsByType<Light>())
-                {
-                    light.shadows = LightShadows.Soft;
-                    light.shadowResolution =
-                        UnityEngine.Rendering.LightShadowResolution.Low;
-                    QualitySettings.shadowDistance = 150f;
-                }
                 foreach (LightingBox.Effects.GlobalFog gf in FindObjectsByType<LightingBox.Effects.GlobalFog>())
                 {
                     gf.enabled = false;
                 }
-                Set_Reflection(false, false);
                 if (FindAnyObjectByType<Terrain>())
                 {
                     FindAnyObjectByType<Terrain>().detailObjectDistance = 100f;
@@ -294,7 +193,6 @@ namespace ALIyerEdon
                 {
                     gf.enabled = true;
                 }
-                Set_Reflection(false, false);
                 if (FindAnyObjectByType<Terrain>())
                 {
                     FindAnyObjectByType<Terrain>().detailObjectDistance = 150f;
@@ -338,7 +236,6 @@ namespace ALIyerEdon
                 {
                     gf.enabled = true;
                 }
-                Set_Reflection(true, false);
                 if (FindAnyObjectByType<Terrain>())
                 {
                     FindAnyObjectByType<Terrain>().detailObjectDistance = 300f;
@@ -382,7 +279,6 @@ namespace ALIyerEdon
                 {
                     gf.enabled = true;
                 }
-                Set_Reflection(false, true);
                 if (FindAnyObjectByType<Terrain>())
                 {
                     FindAnyObjectByType<Terrain>().detailObjectDistance = 300f;
@@ -426,7 +322,6 @@ namespace ALIyerEdon
                 {
                     gf.enabled = true;
                 }
-                Set_Reflection(false, true);
 
                 if (FindAnyObjectByType<Terrain>())
                 {

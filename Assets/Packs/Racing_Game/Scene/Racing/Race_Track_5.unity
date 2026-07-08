@@ -11689,7 +11689,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1941092917}
-  - component: {fileID: 1941092916}
   m_Layer: 0
   m_Name: PrefabPainterSceneSettings
   m_TagString: Untagged
@@ -11697,19 +11696,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1941092916
-MonoBehaviour:
-  m_ObjectHideFlags: 19
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941092915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d0d71238b38a4a38b35b955fbf5c019, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentForPrefabs: {fileID: 0}
 --- !u!4 &1941092917
 Transform:
   m_ObjectHideFlags: 19
@@ -13106,24 +13092,6 @@ MonoBehaviour:
   lineOfSightMask:
     serializedVersion: 2
     m_Bits: 0
---- !u!114 &8244610254001957569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8244610254001957583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcdfa7edb32dcfc4fa91acc6625060ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shakeIntensity: 5
-  collisionShaking: 0
-  offRoadShaking: 0
-  delayShaking: 0
-  currentSpeed: 0
-  isShaking: 0
 --- !u!4 &8244610254001957570
 Transform:
   m_ObjectHideFlags: 0
@@ -13210,7 +13178,6 @@ GameObject:
   - component: {fileID: 8244610254001957581}
   - component: {fileID: 8244610254001957580}
   - component: {fileID: 8791187167792683227}
-  - component: {fileID: 8244610254001957569}
   - component: {fileID: 1228146985391128396}
   - component: {fileID: 8791187167792683228}
   m_Layer: 0

@@ -40,8 +40,6 @@ namespace ALIyerEdon
 
         [Header("Minimap Icons ____________________________________________________" +
     "____________________________________________________")]
-        public GameObject playerArrow;
-        public GameObject racerArrow;
         public float yOffset = 10f;
         public float scale = 10f;
 
@@ -162,34 +160,6 @@ namespace ALIyerEdon
             {
                 GameObject racer = Instantiate(totalRacerPrefabs[i], spawnPositions[i].position,
                      spawnPositions[i].rotation) as GameObject;
-
-                // Instantiate minimap arrow icon for player
-                if (i == 0)
-                {
-                    GameObject minimapArrow = Instantiate(playerArrow, new Vector3(racer.transform.position.x, racer.transform.position.y + yOffset, racer.transform.position.z),
-                       Quaternion.identity) as GameObject;
-
-                    minimapArrow.transform.parent = racer.transform;
-
-                    minimapArrow.transform.localScale = new Vector3(scale, scale, scale);
-
-                    minimapArrow.transform.localRotation = new Quaternion(1f, 0, 0, 1f);
-
-                    minimapArrow.name = "Player Minimap Arrow";
-                }
-                else // Instantiate minimap arrow icon for racers                
-                {
-                    GameObject minimapArrow = Instantiate(racerArrow, new Vector3(racer.transform.position.x, racer.transform.position.y + yOffset, racer.transform.position.z),
-                       Quaternion.identity) as GameObject;
-
-                    minimapArrow.transform.parent = racer.transform;
-
-                    minimapArrow.transform.localScale = new Vector3(scale, scale, scale);
-
-                    minimapArrow.transform.localRotation = new Quaternion(1f, 0, 0, 1f);
-
-                    minimapArrow.name = "Racer Minimap Arrow";
-                }
 
                 // Show or hide car position on the top of the car
                 racer.GetComponent<Car_Position>().displayPosition = false;

@@ -8555,7 +8555,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1422616183}
-  - component: {fileID: 1422616182}
   m_Layer: 0
   m_Name: PrefabPainterSceneSettings
   m_TagString: Untagged
@@ -8563,19 +8562,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1422616182
-MonoBehaviour:
-  m_ObjectHideFlags: 19
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422616181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d0d71238b38a4a38b35b955fbf5c019, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentForPrefabs: {fileID: 0}
 --- !u!4 &1422616183
 Transform:
   m_ObjectHideFlags: 19
@@ -12978,7 +12964,6 @@ GameObject:
   - component: {fileID: 6460914104911756802}
   - component: {fileID: 6460914104911756803}
   - component: {fileID: 5891808217159584788}
-  - component: {fileID: 6460914104911756814}
   - component: {fileID: 4235700667059235715}
   - component: {fileID: 6460914104911756815}
   m_Layer: 0
@@ -13062,24 +13047,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2636594059302930867}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6460914104911756814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6460914104911756800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcdfa7edb32dcfc4fa91acc6625060ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shakeIntensity: 5
-  collisionShaking: 0
-  offRoadShaking: 0
-  delayShaking: 0
-  currentSpeed: 0
-  isShaking: 0
 --- !u!114 &6460914104911756815
 MonoBehaviour:
   m_ObjectHideFlags: 0
