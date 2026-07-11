@@ -2117,16 +2117,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390728661}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5913555040824475785}
+  m_Father: {fileID: 1633935418}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -509.4, y: -216.86}
+  m_AnchoredPosition: {x: -149.39996, y: 0.001449585}
   m_SizeDelta: {x: 78.574, y: 78.574}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &390728663
@@ -4113,7 +4113,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &954308843
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6247,7 +6247,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -148.6, y: -0.00000071526}
+  m_AnchoredPosition: {x: -148.6, y: 0}
   m_SizeDelta: {x: 77.7542, y: 78.5711}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1442861580
@@ -8253,13 +8253,14 @@ RectTransform:
   m_Children:
   - {fileID: 1442861579}
   - {fileID: 4425221404348952948}
+  - {fileID: 390728662}
   m_Father: {fileID: 5913555040824475785}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -360, y: -216.86147}
-  m_SizeDelta: {x: 216.2674, y: 78.5711}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 32}
+  m_SizeDelta: {x: 216.2674, y: 78.571106}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1633935419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10311,7 +10312,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3d8aa3c25bc5707419c27b2fecff70c4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fd78e573e4e2c5441b33115776183ccc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10856,7 +10857,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d94fe5449735eb34f904bef978035b84, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6486ce39416917a4e848198c70bd7498, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -18404,17 +18405,7 @@ MonoBehaviour:
   - {fileID: 3269945281527620714, guid: d147b0b24bfac2943abf819cb4e5f792, type: 3}
   - {fileID: 5166759678371176649, guid: 97de6ae04ba9c4b40b6b44529c9d9e16, type: 3}
   - {fileID: 4106858799262383316, guid: bbe2e24f429135748a1d9b750aea0480, type: 3}
-  - {fileID: 6263853197776435026, guid: 88b1eb1b2df7bbf4298e3f2c8f38d0a6, type: 3}
-  - {fileID: 6118796816163885630, guid: 38c50d7d882ad364aaaf2e315bb2b2b6, type: 3}
-  - {fileID: 3374909870441015566, guid: d420126f2354da54fb5e4c9d5035e4b6, type: 3}
-  - {fileID: 1587110828449368924, guid: 94022526cc64b1d48bf9cd66cace5051, type: 3}
-  - {fileID: 1765962052626086692, guid: 567c5b088b4f2f54ab212cebdf26de49, type: 3}
-  - {fileID: 1592362787884213063, guid: ab71a81b3fdde404f968d150cf474f78, type: 3}
-  - {fileID: 8349364310547011952, guid: 8a5f192af3328044f92d78c54811a1c2, type: 3}
-  - {fileID: 2453124396714913988, guid: 00ce787019ef41a4693af86fbaef7a90, type: 3}
-  - {fileID: 8081036555360020510, guid: 946c1fb8ff882a748928199fe19af7f5, type: 3}
-  - {fileID: 6039208450999345667, guid: 64020fc2771ec2946953b50463450874, type: 3}
-  carPrices: e8030000a00f00008813000070170000581b000088130000282300007017000088130000581b0000a00f000070170000102700001027000010270000
+  carPrices: e8030000a00f00008813000070170000581b0000
   lockIcon: {fileID: 1182403082}
   buyButton: {fileID: 3432965466468848094}
   Price: {fileID: 7183279473047960695}
@@ -18495,7 +18486,6 @@ RectTransform:
   - {fileID: 2123433292}
   - {fileID: 954308843}
   - {fileID: 1633935418}
-  - {fileID: 390728662}
   m_Father: {fileID: 8904252432430899364}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -21562,7 +21552,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Forest
+  m_Text: City
 --- !u!222 &8573258497393740999
 CanvasRenderer:
   m_ObjectHideFlags: 0
