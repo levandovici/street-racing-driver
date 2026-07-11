@@ -34,9 +34,6 @@ namespace ALIyerEdon
         [HideInInspector] public Transform nextCheckpoint;
         Race_Manager race_Manager;
 
-        [Space(5)]
-        public GameObject[] localPositions;
-
         // Update function interval
         [Space(5)]
         public float updateInterval = 0.1f;

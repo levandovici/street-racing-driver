@@ -261,10 +261,7 @@ namespace ALIyerEdon
             if (raceUI)
                 raceUI.SetActive(true);
 
-            if (GetComponentInChildren<InputSystem>().controlType == InputType.Mobile)
-                FindAnyObjectByType<Race_Manager>().mobileControls.SetActive(true);
-            else
-                FindAnyObjectByType<Race_Manager>().mobileControls.SetActive(false);
+            FindAnyObjectByType<Race_Manager>().mobileControls.SetActive(true);
 
             // Enable or disable right side position ui
             if (PlayerPrefs.GetInt("ShowPositionUI") == 1)
@@ -274,9 +271,7 @@ namespace ALIyerEdon
 
             if (mobileControls)
             {
-                if (FindAnyObjectByType<InputSystem>().controlType == InputType.Mobile)
-                    mobileControls.SetActive(true);
-
+                mobileControls.SetActive(true);
             }
 
             yield return new WaitForSeconds(1);

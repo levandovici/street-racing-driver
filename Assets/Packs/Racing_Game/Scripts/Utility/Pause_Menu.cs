@@ -47,11 +47,7 @@ namespace ALIyerEdon
             pauseMenu.SetActive(false);
             raceUI.SetActive(true);
 
-            if (FindAnyObjectByType<InputSystem>())
-            {
-                if (FindAnyObjectByType<InputSystem>().controlType == InputType.Mobile)
-                    mobileControls.SetActive(true);
-            }        
+            mobileControls.SetActive(true);
         }
 
         public void Restart()

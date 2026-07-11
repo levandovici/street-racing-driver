@@ -47,7 +47,7 @@ namespace ALIyerEdon
         IEnumerator Init_Nitro()
         {
             yield return new WaitForEndOfFrame();
-                        
+
             carController = GameObject.FindGameObjectWithTag("Player")
                 .GetComponent<EasyCarController>();
 
@@ -56,20 +56,9 @@ namespace ALIyerEdon
 
             nitroController = carController.GetComponent<Nitro_Feature>();
 
-            inputSystem = FindAnyObjectByType<InputSystem>();
-
-            if (inputSystem.controlType == InputType.Keyboard)
-            {
-                PC_Mode = true;
-                mobileUI.SetActive(false);
-                PcUI.SetActive(true);
-            }
-            if (inputSystem.controlType == InputType.Mobile)
-            {
-                PC_Mode = false;
-                mobileUI.SetActive(true);
-                PcUI.SetActive(false);
-            }
+            PC_Mode = false;
+            mobileUI.SetActive(true);
+            PcUI.SetActive(false);
         }
 
         void Update()

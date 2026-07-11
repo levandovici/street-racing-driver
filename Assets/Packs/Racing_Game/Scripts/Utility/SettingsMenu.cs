@@ -14,7 +14,6 @@ namespace ALIyerEdon
     public class SettingsMenu : MonoBehaviour
     {
         // UI items in settings menu window
-        public Dropdown controlType;
         public Dropdown targetFPS;
         public Dropdown dynamicCamera;
 
@@ -32,7 +31,6 @@ namespace ALIyerEdon
             AccelSensibility.value = PlayerPrefs.GetFloat("accelSensibility");
             AccelSensibilityInfo.text = AccelSensibility.value.ToString();
 
-            controlType.value = PlayerPrefs.GetInt("ControlType");
             targetFPS.value = PlayerPrefs.GetInt("targetFPS");
             dynamicCamera.value = PlayerPrefs.GetInt("Dynamic Camera");
 
@@ -55,12 +53,6 @@ namespace ALIyerEdon
             PlayerPrefs.SetFloat("Music", musicVolume.value);
             musicVolumeInfo.text = musicVolume.value.ToString();
             FindAnyObjectByType<Load_Settings>().Update_MusicVolume(musicVolume.value);
-        }
-
-        // Control type : accelerometer , steering wheel , arrow keys
-        public void Set_ControlType()
-        {
-            PlayerPrefs.SetInt("ControlType", controlType.value);
         }
 
         public void Set_TargetFPS()
