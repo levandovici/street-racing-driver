@@ -24,6 +24,17 @@ namespace ALIyerEdon
 
         public Toggle positionUI;
 
+        public Button privacyPolicy;
+
+
+
+        private void Awake()
+        {
+            privacyPolicy.onClick.AddListener(() => Application.OpenURL("https://michitai.com/privacy-policy.html"));
+        }
+
+
+
         // Start is called before the first frame update
         void Start()
         {
