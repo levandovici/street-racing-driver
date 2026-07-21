@@ -16453,6 +16453,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3982713448506193732, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4235916185622190207, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -16471,7 +16475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5468760782498716512, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
       propertyPath: trackName
-      value: Forest Track
+      value: City Track
       objectReference: {fileID: 0}
     - target: {fileID: 5468760782498716512, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
       propertyPath: racerPrefabs.Array.size
@@ -16749,6 +16753,10 @@ PrefabInstance:
       propertyPath: volumeTrigger
       value: 
       objectReference: {fileID: 8580436049657540667}
+    - target: {fileID: 8062904004542961950, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8436868591313579827, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 0
