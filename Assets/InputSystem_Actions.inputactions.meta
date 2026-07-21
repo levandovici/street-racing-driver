@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 289c1b55c9541489481df5cc06664110
+guid: 70fcbae93c037a947bbbbe0fc2947f24
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -11,11 +11,4 @@ ScriptedImporter:
   generateWrapperCode: 0
   wrapperCodePath: 
   wrapperClassName: 
-  wrapperCodeNamespace: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 358482
-  packageName: Complete Racing Game 2 (Mega Game)
-  packageVersion: 1.2
-  assetPath: Assets/InputSystem_Actions.inputactions
-  uploadId: 926594
+  wrapperCodeNamespace: UnityEngine.InputSystem

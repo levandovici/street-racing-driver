@@ -16,7 +16,6 @@ namespace ALIyerEdon
 
         public GameObject pauseMenu;
         public GameObject raceUI;
-        public GameObject mobileControls;
 
         public Text Loading;
 
@@ -35,7 +34,6 @@ namespace ALIyerEdon
                     Time.timeScale = 0;
                     pauseMenu.SetActive(true);
                     raceUI.SetActive(false);
-                    mobileControls.SetActive(false);
                 }
             }
         }
@@ -46,8 +44,6 @@ namespace ALIyerEdon
             Time.timeScale = FindAnyObjectByType<Race_Manager>().timeScale;
             pauseMenu.SetActive(false);
             raceUI.SetActive(true);
-
-            mobileControls.SetActive(true);
         }
 
         public void Restart()

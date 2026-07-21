@@ -62,10 +62,6 @@ namespace ALIyerEdon
                 // Default driver name
                 PlayerPrefs.SetString("DriverName", "Player");
 
-				// Set default control type to the arrow keys
-				//Arrow keys = 0 , Joystick = 1 , acceleration = 2
-				PlayerPrefs.SetInt("ControlType", 0);
-				
 				// Default quality level is Low
 				PlayerPrefs.SetInt("QualityLevel", 1);
 
@@ -155,14 +151,11 @@ namespace ALIyerEdon
                     exitMenu.SetActive(!exitMenu.activeSelf);
                 }
             }
-            else
+            if (Keyboard.current != null)
             {
-                if (Keyboard.current != null)
+                if (Keyboard.current.escapeKey.wasPressedThisFrame)
                 {
-                    if (Keyboard.current.escapeKey.wasPressedThisFrame)
-                    {
-                        exitMenu.SetActive(!exitMenu.activeSelf);
-                    }
+                    exitMenu.SetActive(!exitMenu.activeSelf);
                 }
             }
             #endregion

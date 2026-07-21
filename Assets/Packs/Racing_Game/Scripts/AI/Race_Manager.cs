@@ -49,7 +49,6 @@ namespace ALIyerEdon
         public GameObject raceFinishUI;
         public GameObject positionUI;
         public GameOver gameoverMenu;
-        public GameObject mobileControls;
 
         [Header("Player Info ____________________________________________________" +
             "____________________________________________________")]
@@ -110,8 +109,6 @@ namespace ALIyerEdon
                 startUI.SetActive(false);
             if (raceUI)
                 raceUI.SetActive(false);
-            if (mobileControls)
-                mobileControls.SetActive(false);
 
 
             FindAnyObjectByType<Start_Counter>().timeScale = timeScale;
@@ -261,18 +258,11 @@ namespace ALIyerEdon
             if (raceUI)
                 raceUI.SetActive(true);
 
-            FindAnyObjectByType<Race_Manager>().mobileControls.SetActive(true);
-
             // Enable or disable right side position ui
             if (PlayerPrefs.GetInt("ShowPositionUI") == 1)
                 positionUI.SetActive(true);
             else
                 positionUI.SetActive(false);
-
-            if (mobileControls)
-            {
-                mobileControls.SetActive(true);
-            }
 
             yield return new WaitForSeconds(1);
 
@@ -332,7 +322,6 @@ namespace ALIyerEdon
             FindAnyObjectByType<Start_Finish_UI>().startButton.SetActive(false);
             FindAnyObjectByType<Start_Finish_UI>().raceUI.SetActive(false);
 
-            mobileControls.SetActive(false);
             Update_Positions_Display();
 
             // Update award icons (gold , bronze silver) at race finish menu

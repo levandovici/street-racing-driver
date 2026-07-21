@@ -9,7 +9,6 @@ namespace ALIyerEdon
     {
         public static GameOver instance;
         public GameObject gameOverMenu,watchAD,resume;
-        public GameObject mobileControls;
 
         public Slider healthBar;
         public Image fillArea;
@@ -50,7 +49,6 @@ namespace ALIyerEdon
             foreach(GameObject aaa in raceUI)
                     aaa.SetActive(false);
 
-            mobileControls.SetActive(false);
             Time.timeScale = 0;
             AudioListener.volume = 0;
         }
@@ -74,8 +72,6 @@ namespace ALIyerEdon
 
             foreach (GameObject aaa in raceUI)
                 aaa.SetActive(true);
-
-            mobileControls.SetActive(true);
         }
 
         public void Exit()

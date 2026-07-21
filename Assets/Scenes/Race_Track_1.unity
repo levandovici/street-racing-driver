@@ -16313,6 +16313,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1898582305926500575, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
+      propertyPath: mobileControls
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2069116755686153636, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -16368,6 +16372,18 @@ PrefabInstance:
     - target: {fileID: 2069116757390843446, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2069116757428386740, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2069116757428386740, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
+      propertyPath: arrowKeys
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2069116757428386740, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
+      propertyPath: controlType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2069116757507503210, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
       propertyPath: m_Layer
@@ -16433,6 +16449,50 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2670288811708037736, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
+      propertyPath: m_MoveAction
+      value: 
+      objectReference: {fileID: -8784545083839296357, guid: 70fcbae93c037a947bbbbe0fc2947f24, type: 3}
+    - target: {fileID: 2670288811708037736, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
+      propertyPath: m_PointAction
+      value: 
+      objectReference: {fileID: -1654692200621890270, guid: 70fcbae93c037a947bbbbe0fc2947f24, type: 3}
+    - target: {fileID: 2670288811708037736, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
+      propertyPath: m_ActionsAsset
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: 70fcbae93c037a947bbbbe0fc2947f24, type: 3}
+    - target: {fileID: 2670288811708037736, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
+      propertyPath: m_CancelAction
+      value: 
+      objectReference: {fileID: 7727032971491509709, guid: 70fcbae93c037a947bbbbe0fc2947f24, type: 3}
+    - target: {fileID: 2670288811708037736, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
+      propertyPath: m_SubmitAction
+      value: 
+      objectReference: {fileID: 392368643174621059, guid: 70fcbae93c037a947bbbbe0fc2947f24, type: 3}
+    - target: {fileID: 2670288811708037736, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
+      propertyPath: m_LeftClickAction
+      value: 
+      objectReference: {fileID: 3001919216989983466, guid: 70fcbae93c037a947bbbbe0fc2947f24, type: 3}
+    - target: {fileID: 2670288811708037736, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
+      propertyPath: m_RightClickAction
+      value: 
+      objectReference: {fileID: -4090225696740746782, guid: 70fcbae93c037a947bbbbe0fc2947f24, type: 3}
+    - target: {fileID: 2670288811708037736, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
+      propertyPath: m_MiddleClickAction
+      value: 
+      objectReference: {fileID: -2185481485913320682, guid: 70fcbae93c037a947bbbbe0fc2947f24, type: 3}
+    - target: {fileID: 2670288811708037736, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
+      propertyPath: m_ScrollWheelAction
+      value: 
+      objectReference: {fileID: 6240969308177333660, guid: 70fcbae93c037a947bbbbe0fc2947f24, type: 3}
+    - target: {fileID: 2670288811708037736, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
+      propertyPath: m_TrackedDevicePositionAction
+      value: 
+      objectReference: {fileID: 6564999863303420839, guid: 70fcbae93c037a947bbbbe0fc2947f24, type: 3}
+    - target: {fileID: 2670288811708037736, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
+      propertyPath: m_TrackedDeviceOrientationAction
+      value: 
+      objectReference: {fileID: 7970375526676320489, guid: 70fcbae93c037a947bbbbe0fc2947f24, type: 3}
     - target: {fileID: 2968781215148363636, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -16721,6 +16781,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6350997900504232133, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
+      propertyPath: nitroSliderMobile
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6385765005460771108, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -16851,6 +16915,7 @@ PrefabInstance:
     - {fileID: 5693986470704368635, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
     - {fileID: 1498771794259630293, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
     - {fileID: 8218572667673623094, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
+    - {fileID: 2069116757507503210, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3288227511323021436, guid: 19ed43ac2e5ddd844a1690be66a74189, type: 3}

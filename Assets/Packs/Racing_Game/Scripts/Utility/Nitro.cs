@@ -13,10 +13,8 @@ namespace ALIyerEdon
 {
     public class Nitro : MonoBehaviour
     {
-        public Image nitroSliderMobile;
         public Image nitroSliderPC;
 
-        public GameObject mobileUI;
         public GameObject PcUI;
 
 
@@ -24,10 +22,12 @@ namespace ALIyerEdon
         EasyCarController carController;
         Nitro_Feature nitroController;
         InputSystem inputSystem;
-            
+
         bool nitroState = false;
-        bool PC_Mode;
         float mass = 0;
+
+
+
         IEnumerator Start()
         {
             yield return new WaitForEndOfFrame();
@@ -35,7 +35,6 @@ namespace ALIyerEdon
             // Disable nitro UI if the player car has no nitro feature component
             if (!FindAnyObjectByType<Nitro_Feature>().enableNitro)
             {
-                mobileUI.SetActive(false);
                 PcUI.SetActive(false);
             }
             else
@@ -56,9 +55,9 @@ namespace ALIyerEdon
 
             nitroController = carController.GetComponent<Nitro_Feature>();
 
-            PC_Mode = false;
-            mobileUI.SetActive(true);
-            PcUI.SetActive(false);
+            inputSystem = FindAnyObjectByType<InputSystem>();
+
+            PcUI.SetActive(true);
         }
 
         void Update()
@@ -66,53 +65,12 @@ namespace ALIyerEdon
             if (!carController || !nitroController.raceIsStarted)
                 return;
 
-            if(PC_Mode)
-            {
-                if (Gamepad.current != null)
-                {
-                    if (Gamepad.current.buttonSouth.ReadValue() > 0)
-                    {
-                        if (!carController || !nitroController.raceIsStarted)
-                            return;
-
-                        if (nitroController.Amount > 0)
-                            nitroState = true;
-                        else
-                            nitroState = false;
-                    }
-                    else
-                    {
-                        if (!carController || !nitroController.raceIsStarted)
-                            return;
-
-                        nitroState = false;
-                    }
-                }
-                else
-                {
-                    if (Keyboard.current != null)
-                    {
-                        if (Keyboard.current.leftShiftKey.ReadValue() > 0)
-                        {
-                            if (!carController || !nitroController.raceIsStarted)
-                                return;
-
-                            if (nitroController.Amount > 0)
-                                nitroState = true;
-                            else
-                                nitroState = false;
-
-                        }
-                        if (Keyboard.current.leftShiftKey.ReadValue() == 0)
-                        {
-                            if (!carController || !nitroController.raceIsStarted)
-                                return;
-
-                            nitroState = false;
-                        }
-                    }
-                }
-            }
+            nitroState =
+                nitroController.Amount > 0 &&
+                (
+                    (Gamepad.current?.buttonSouth.ReadValue() > 0) ||
+                    (Keyboard.current?.leftShiftKey.ReadValue() > 0)
+                );
 
             if (!nitroState && nitroController.Amount < 100)
             {
@@ -136,7 +94,7 @@ namespace ALIyerEdon
                 nitroController.Amount -= (nitroController.reduceRate * Time.deltaTime);
 
                 // Reduce mass of the car at nitro mode to move faster !!!
-                if(nitroController.nitroBoost == NitroBoostPower.X1)
+                if (nitroController.nitroBoost == NitroBoostPower.X1)
                     carRigidbody.mass = mass / 2;
                 if (nitroController.nitroBoost == NitroBoostPower.X2)
                     carRigidbody.mass = mass / 3;
@@ -170,33 +128,7 @@ namespace ALIyerEdon
                 }
             }
 
-            nitroSliderMobile.fillAmount = nitroController.Amount / 100;
             nitroSliderPC.fillAmount = nitroController.Amount / 100;
-        }
-
-        public void Apply_Nitro()
-        {
-            if (!PC_Mode)
-            {
-                if (!carController || !nitroController.raceIsStarted)
-                    return;
-
-                if (nitroController.Amount > 0)
-                    nitroState = true;
-                else
-                    nitroState = false;
-
-            }
-        }
-        public void Release_Nitro()
-        {
-            if (!PC_Mode)
-            {
-                if (!carController || !nitroController.raceIsStarted)
-                    return;
-
-                nitroState = false;
-            }
         }
     }
 }
